@@ -1,0 +1,149 @@
+import { useState, useEffect } from 'react';
+import PageHeader from '../components/PageHeader';
+import Navigation from '../components/Navigation';
+import ProjectNavigation from '../components/ProjectNavigation';
+import CaseStudyFooter from '../components/CaseStudyFooter';
+import './WatsonOrchestrate.css';
+import './TransformationAdvisor.css';
+
+const heroImage = '/images/Transformation-advisor/Screen Shot 2021-12-07 at 3.57.22 PM.png';
+
+function TransformationAdvisor() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  return (
+    <div className="case-study transformation-advisor">
+      <Navigation isOpen={isMenuOpen} onClose={closeMenu} />
+      <PageHeader onMenuOpen={openMenu} />
+
+      {/* Hero Section */}
+      <section className="cs-hero">
+        <h1 className="cs-title script-font">IBM Transformation Advisor</h1>
+        <p className="cs-subtitle script-font">2020</p>
+        <div className="cs-hero-image">
+          <img src={heroImage} alt="IBM Transformation Advisor - Java Applications interface showing workspaces and application analysis" />
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="cs-section">
+        <h2 className="cs-section-title">Overview</h2>
+
+        <div className="cs-meta">
+          <p className="cs-meta-item script-font">Role: Visual and UX designer</p>
+        </div>
+
+        <div className="cs-block">
+          <h3 className="cs-block-title script-font">User problem statement</h3>
+          <p className="cs-text">
+            Champ (a solutions architect) and Jane (an applications developer) need to modernize their company's complex legacy, mission-critical applications so they can continue to scale infrastructure, save money, and maintain stability.
+          </p>
+        </div>
+
+        <div className="cs-block">
+          <h3 className="cs-block-title script-font">Business value and need</h3>
+          <p className="cs-text">
+            IBM needed to support customers in modernizing applications. Transformation Advisor was built to guide and provide visibility for developers and solution architects through that workflow.
+          </p>
+        </div>
+
+        <div className="cs-block">
+          <h3 className="cs-block-title script-font">My contribution summary</h3>
+          <ul className="cs-list">
+            <li>Designed a cost and time estimation feature based on customer parameters, helping teams prioritize modernization efforts more efficiently</li>
+            <li>Improved dashboard filtering to support diverse customer needs, allowing users to customize views and track progress throughout their modernization journey</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Full-width Platform Screenshots Slider */}
+      <section className="ta-platform-showcase">
+        <div className="ta-slider-container">
+          <div className="ta-slider-track">
+            <div className="ta-slider-item">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.31 PM.png" alt="Transformation Advisor interface view 1" />
+            </div>
+            <div className="ta-slider-item">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.46 PM.png" alt="Transformation Advisor interface view 2" />
+            </div>
+            <div className="ta-slider-item">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.59 PM.png" alt="Transformation Advisor interface view 3" />
+            </div>
+            <div className="ta-slider-item">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.53.00 PM.png" alt="Transformation Advisor interface view 4" />
+            </div>
+            <div className="ta-slider-item">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.53.08 PM.png" alt="Transformation Advisor interface view 5" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Work and Evidence Section */}
+      <section className="cs-section">
+        <h2 className="cs-section-title">Work and evidence</h2>
+
+        <div className="cs-block">
+          <h3 className="cs-block-title script-font">UX, Research and Visual design work</h3>
+          <p className="cs-text">
+            IBM Transformation Advisor (TA) is a product to help businesses modernize monolith applications and move them to the cloud. In my 4 months on the team, I collaborated with design and developers to ideate on how to implement new tech in a usable way. This team allowed me to use and grow my UX skills as well as research and visual design skills. My biggest impact on this project was tackling a UX challenge of "rolled up cost" to give a more accurate, rolled-up estimate of development days modernization would take.
+          </p>
+        </div>
+
+        <div className="ta-comparison-grid">
+          <div className="ta-comparison-column">
+            <h4 className="ta-comparison-title script-font">Research</h4>
+            <div className="ta-comparison-image">
+              <img src="/images/Transformation-advisor/1. a copy 6.png" alt="Research - Scope/big questions analysis" />
+            </div>
+          </div>
+          <div className="ta-comparison-column">
+            <h4 className="ta-comparison-title script-font">Rolled up cost</h4>
+            <div className="ta-comparison-image">
+              <img src="/images/Transformation-advisor/2. b  copy 20.png" alt="Rolled up cost wireframe iteration" />
+            </div>
+          </div>
+        </div>
+        <p className="ta-caption script-font">Screen iteration from TA rolled up cost work</p>
+      </section>
+
+      {/* Journey Map Section */}
+      <section className="cs-section">
+        <h3 className="cs-block-title script-font">Journey Map</h3>
+        <div className="ta-journey-map">
+          <img src="/images/Transformation-advisor/journey map V1_2x.png" alt="Transformation Advisor user journey map" />
+        </div>
+      </section>
+
+      {/* Reflection Section */}
+      <section className="cs-section">
+        <h2 className="cs-section-title">Reflection</h2>
+
+        <p className="cs-text">
+          Working on Transformation Advisor taught me the importance of understanding complex technical concepts in order to design effective user experiences. The rolled-up cost feature required deep collaboration with developers and stakeholders to translate technical requirements into intuitive interfaces.
+        </p>
+
+        <p className="cs-text">
+          This project reinforced my ability to work within an agile environment, iterate quickly based on user feedback, and balance business needs with user needs. The experience of designing for enterprise software users helped me develop a more nuanced understanding of how to simplify complex workflows.
+        </p>
+      </section>
+
+      {/* Project Navigation */}
+      <ProjectNavigation
+        prevProject={{ name: 'IBM Blockchain Platform', path: '/work/blockchain-platform' }}
+        nextProject={{ name: 'IBM Trusted Identity', path: '/work/trusted-identity' }}
+      />
+
+      <CaseStudyFooter />
+    </div>
+  );
+}
+
+export default TransformationAdvisor;

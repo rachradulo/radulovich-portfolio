@@ -1,0 +1,128 @@
+/* Transformation Advisor - Case Study Styles */
+
+/* Platform Showcase - Full width dark section with horizontal scroll */
+.ta-platform-showcase {
+  background: #1a1a2e;
+  padding: 60px 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.ta-slider-container {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ta-slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.ta-slider-track {
+  display: flex;
+  gap: 20px;
+  padding: 0 80px;
+  width: max-content;
+}
+
+.ta-slider-item {
+  flex-shrink: 0;
+  width: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ta-slider-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Comparison Grid - Research / Rolled up cost */
+.ta-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.ta-comparison-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ta-comparison-title {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.ta-comparison-image {
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+}
+
+.ta-comparison-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Caption */
+.ta-caption {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* Journey Map */
+.ta-journey-map {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ta-journey-map img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ta-slider-track {
+    padding: 0 50px;
+  }
+
+  .ta-slider-item {
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ta-platform-showcase {
+    padding: 40px 0;
+  }
+
+  .ta-slider-track {
+    padding: 0 30px;
+    gap: 15px;
+  }
+
+  .ta-slider-item {
+    width: 280px;
+  }
+
+  .ta-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .ta-caption {
+    margin-bottom: 40px;
+  }
+}

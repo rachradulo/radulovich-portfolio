@@ -1,0 +1,234 @@
+/* Blockchain Platform - Case Study Styles */
+
+/* Platform Showcase - Full width dark section */
+.bc-platform-showcase {
+  background: #1a1a2e;
+  padding: 60px 80px;
+  margin: 0;
+}
+
+.bc-platform-image {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bc-platform-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Product Label */
+.bc-product-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.bc-goal-text {
+  font-style: italic;
+  color: #555;
+}
+
+/* Section Subtitle */
+.bc-section-subtitle {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Comparison Grid - Before/After */
+.bc-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.bc-comparison-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.bc-comparison-title {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.bc-comparison-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.bc-comparison-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+}
+
+/* UX Design Grid */
+.bc-ux-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.bc-ux-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.bc-column-title {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.bc-ux-image {
+  margin-bottom: 15px;
+}
+
+.bc-ux-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+}
+
+/* App Grid - Multiple screenshots */
+.bc-app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.bc-app-item {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+}
+
+.bc-app-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bc-app-description {
+  margin-top: 20px;
+}
+
+/* Award Section */
+.bc-award-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+}
+
+.bc-award-badge {
+  flex-shrink: 0;
+  width: 140px;
+}
+
+.bc-award-badge img {
+  width: 100%;
+  height: auto;
+}
+
+/* Red Dot Text Badge */
+.bc-reddot-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  background: #e30613;
+  border-radius: 4px;
+  color: white;
+}
+
+.bc-reddot-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+.bc-reddot-label {
+  font-size: 0.7rem;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.bc-reddot-year {
+  font-size: 0.65rem;
+  text-transform: lowercase;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.bc-award-text {
+  flex: 1;
+}
+
+.bc-award-text .cs-text {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bc-platform-showcase {
+    padding: 50px;
+  }
+
+  .bc-app-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bc-platform-showcase {
+    padding: 40px 30px;
+  }
+
+  .bc-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bc-ux-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bc-app-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bc-award-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .bc-award-badge {
+    width: 100px;
+  }
+}

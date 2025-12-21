@@ -5,6 +5,8 @@ import Navigation from './components/Navigation';
 import Work from './components/Work';
 import Footer from './components/Footer';
 import WatsonOrchestrate from './pages/WatsonOrchestrate';
+import BlockchainPlatform from './pages/BlockchainPlatform';
+import TransformationAdvisor from './pages/TransformationAdvisor';
 import './styles/index.css';
 
 function HomePage() {
@@ -29,9 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/work/watson-orchestrate" element={<WatsonOrchestrate />} />
-        {/* Future project pages */}
-        <Route path="/work/blockchain-platform" element={<div>IBM Blockchain Platform - Coming Soon</div>} />
-        <Route path="/work/transformation-advisor" element={<div>IBM Transformation Advisor - Coming Soon</div>} />
+        <Route path="/work/blockchain-platform" element={<BlockchainPlatform />} />
+        <Route path="/work/transformation-advisor" element={<TransformationAdvisor />} />
         <Route path="/work/trusted-identity" element={<div>Trusted Identity - Coming Soon</div>} />
       </Routes>
     </BrowserRouter>

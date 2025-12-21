@@ -1,0 +1,43 @@
+.footer {
+  padding: 60px 80px;
+  background-color: var(--off-white);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.thanks-message {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 300;
+}
+
+.home-icon-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.2s ease;
+}
+
+.home-icon-button:hover {
+  color: var(--purple-primary);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 30px;
+  }
+
+  .thanks-message {
+    font-size: 1.2rem;
+  }
+}

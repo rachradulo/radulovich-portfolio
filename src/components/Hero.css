@@ -1,0 +1,120 @@
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-dark) 100%);
+  display: flex;
+  align-items: center;
+  padding: 60px 80px;
+  position: relative;
+}
+
+.menu-button {
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menu-button span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.menu-button:hover span {
+  opacity: 0.8;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin-left: 10%;
+}
+
+.hero-name {
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.formerly {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.rownd-link {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rownd-link:hover {
+  opacity: 0.9;
+}
+
+.my-work-button {
+  padding: 15px 40px;
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.my-work-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 30px;
+  }
+
+  .menu-button {
+    right: 30px;
+    top: 30px;
+  }
+
+  .hero-content {
+    margin-left: 0;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .formerly {
+    font-size: 0.9rem;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+  }
+}

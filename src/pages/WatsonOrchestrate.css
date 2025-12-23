@@ -27,13 +27,17 @@
 .cs-hero-image {
   width: 100%;
   margin-top: 30px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .cs-hero-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
-  border-radius: 4px;
 }
 
 /* Section Styles */

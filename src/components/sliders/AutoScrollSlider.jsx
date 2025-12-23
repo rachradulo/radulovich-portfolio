@@ -1,45 +1,52 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './AutoScrollSlider.css';
 
 function AutoScrollSlider({ images, interval = 5000, className = '' }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef(null);
-  const intervalRef = useRef(null);
+  const animationRef = useRef(null);
   const isUserScrolling = useRef(false);
   const scrollTimeout = useRef(null);
 
-  // Auto-scroll functionality
+  // Create duplicated images for seamless loop
+  const duplicatedImages = [...images, ...images, ...images];
+
+  // Initialize scroll position to middle set
   useEffect(() => {
-    const startAutoScroll = () => {
-      intervalRef.current = setInterval(() => {
-        if (!isUserScrolling.current) {
-          setCurrentIndex((prev) => (prev + 1) % images.length);
+    if (containerRef.current) {
+      const container = containerRef.current;
+      // Start at the middle set of images
+      const singleSetWidth = container.scrollWidth / 3;
+      container.scrollLeft = singleSetWidth;
+    }
+  }, []);
+
+  // Continuous smooth scroll animation
+  useEffect(() => {
+    const scrollSpeed = 0.5; // pixels per frame
+
+    const animate = () => {
+      if (containerRef.current && !isUserScrolling.current) {
+        const container = containerRef.current;
+        const singleSetWidth = container.scrollWidth / 3;
+
+        container.scrollLeft += scrollSpeed;
+
+        // When we've scrolled past the second set, jump back to first set
+        if (container.scrollLeft >= singleSetWidth * 2) {
+          container.scrollLeft = singleSetWidth;
         }
-      }, interval);
+      }
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    startAutoScroll();
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
-  }, [images.length, interval]);
-
-  // Sync scroll position with currentIndex
-  useEffect(() => {
-    if (containerRef.current && !isUserScrolling.current) {
-      const scrollWidth = containerRef.current.scrollWidth;
-      const containerWidth = containerRef.current.clientWidth;
-      const maxScroll = scrollWidth - containerWidth;
-      const targetScroll = (currentIndex / (images.length - 1)) * maxScroll;
-
-      containerRef.current.scrollTo({
-        left: targetScroll,
-        behavior: 'smooth'
-      });
-    }
-  }, [currentIndex, images.length]);
+  }, []);
 
   // Handle manual horizontal scroll
   const handleScroll = () => {
@@ -48,19 +55,24 @@ function AutoScrollSlider({ images, interval = 5000, className = '' }) {
     // Clear existing timeout
     if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
 
+    // Check for loop reset during manual scroll
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const singleSetWidth = container.scrollWidth / 3;
+
+      // If scrolled to end, jump to middle
+      if (container.scrollLeft >= singleSetWidth * 2) {
+        container.scrollLeft = singleSetWidth;
+      }
+      // If scrolled to beginning, jump to middle
+      if (container.scrollLeft <= 0) {
+        container.scrollLeft = singleSetWidth;
+      }
+    }
+
     // Resume auto-scroll after 3 seconds of no scrolling
     scrollTimeout.current = setTimeout(() => {
       isUserScrolling.current = false;
-
-      // Update currentIndex based on scroll position
-      if (containerRef.current) {
-        const scrollLeft = containerRef.current.scrollLeft;
-        const scrollWidth = containerRef.current.scrollWidth;
-        const containerWidth = containerRef.current.clientWidth;
-        const maxScroll = scrollWidth - containerWidth;
-        const newIndex = Math.round((scrollLeft / maxScroll) * (images.length - 1));
-        setCurrentIndex(Math.max(0, Math.min(newIndex, images.length - 1)));
-      }
     }, 3000);
   };
 
@@ -87,26 +99,12 @@ function AutoScrollSlider({ images, interval = 5000, className = '' }) {
         onWheel={handleWheel}
       >
         <div className="slider-track">
-          {images.map((image, index) => (
+          {duplicatedImages.map((image, index) => (
             <div key={index} className="slide">
-              <img src={image.src} alt={image.alt || `Slide ${index + 1}`} />
+              <img src={image.src} alt={image.alt || `Slide ${(index % images.length) + 1}`} />
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="slider-indicators">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={`indicator ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => {
-              isUserScrolling.current = false;
-              setCurrentIndex(index);
-            }}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
       </div>
     </div>
   );

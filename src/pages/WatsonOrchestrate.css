@@ -74,46 +74,30 @@
   display: block;
 }
 
-/* Outcome Grid - Full Width */
-.cs-outcome-grid-section {
-  width: 100%;
-  padding: 20px 40px 40px;
-}
-
-.cs-outcome-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
-.cs-outcome-item {
+/* Outcome Slider - Full Width */
+.wo-outcome-slider-section {
+  padding: 20px 0;
+  margin: 0;
   width: 100%;
   overflow: hidden;
-  border-radius: 4px;
 }
 
-.cs-outcome-item img {
-  width: 100%;
-  height: auto;
-  display: block;
+.wo-outcome-slider .slider-track {
+  gap: 5px;
 }
 
-@media (max-width: 1024px) {
-  .cs-outcome-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.wo-outcome-slider .slide {
+  width: auto;
+  max-width: none;
+  max-height: 550px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
-  .cs-outcome-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cs-outcome-grid-section {
-    padding: 20px 20px 40px;
-  }
+.wo-outcome-slider .slide img {
+  height: 550px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Watson Orchestrate Process Slider - Full Width */

@@ -191,15 +191,9 @@ function WatsonOrchestrate() {
         </div>
       </section>
 
-      {/* Full-width Outcome Grid */}
-      <section className="cs-outcome-grid-section">
-        <div className="cs-outcome-grid">
-          {outcomeImages.map((image, index) => (
-            <div key={index} className="cs-outcome-item">
-              <img src={image.src} alt={image.alt} />
-            </div>
-          ))}
-        </div>
+      {/* Full-width Outcome Slider */}
+      <section className="wo-outcome-slider-section">
+        <AutoScrollSlider images={outcomeImages} interval={4000} className="wo-outcome-slider" />
       </section>
 
       <section className="cs-section">

@@ -105,7 +105,7 @@ function WatsonOrchestrate() {
 
       {/* Full-width Process Slider */}
       <section className="wo-process-slider-section">
-        <AutoScrollSlider images={processImages} interval={5000} className="wo-process-slider" />
+        <AutoScrollSlider images={processImages} interval={8000} className="wo-process-slider" />
       </section>
 
       <section className="cs-section">

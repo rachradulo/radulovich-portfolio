@@ -3,8 +3,23 @@ import PageHeader from '../components/PageHeader';
 import Navigation from '../components/Navigation';
 import ProjectNavigation from '../components/ProjectNavigation';
 import CaseStudyFooter from '../components/CaseStudyFooter';
+import { FullscreenSlider } from '../components/sliders';
 import './WatsonOrchestrate.css';
 import './TransformationAdvisor.css';
+
+// Work and Evidence images for clickable fullscreen viewing
+const researchImages = [
+  { src: '/images/Transformation-advisor/1. a copy 6.png', alt: 'Research - Scope/big questions analysis' }
+];
+const rolledUpCostImages = [
+  { src: '/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.46 PM.png', alt: 'Rolled up cost - Java Applications with Common JAR files' }
+];
+const advancedFilteringImages = [
+  { src: '/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.09.21 AM.png', alt: 'Advanced filtering - Migration assessment with filter options' }
+];
+const domainCentricImages = [
+  { src: '/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.04.14 AM.png', alt: 'Domain centric view - Moneybank workspace' }
+];
 
 const heroImage = '/images/Transformation-advisor/Screen Shot 2021-12-07 at 3.57.22 PM.png';
 
@@ -84,8 +99,8 @@ function TransformationAdvisor() {
         <div className="cs-two-column">
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Research</h4>
-            <div className="cs-column-image">
-              <img src="/images/Transformation-advisor/1. a copy 6.png" alt="Research - Scope/big questions analysis" />
+            <div className="ta-clickable-image">
+              <FullscreenSlider images={researchImages} className="ta-evidence-slider" />
             </div>
             <p className="cs-text">
               I planned, ran, and synthesized research sessions to understand the goals of future TA versions. I presented findings and used those findings to impact design work moving forward.
@@ -93,8 +108,8 @@ function TransformationAdvisor() {
           </div>
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Rolled up cost</h4>
-            <div className="cs-column-image">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.46 PM.png" alt="Rolled up cost - Java Applications with Common JAR files" />
+            <div className="ta-clickable-image">
+              <FullscreenSlider images={rolledUpCostImages} className="ta-evidence-slider" />
             </div>
             <p className="cs-text">
               The aim of this work was to give a more accurate estimate of how many development days applications would take to modernize based on the number of shared files between them.
@@ -105,8 +120,8 @@ function TransformationAdvisor() {
         <div className="cs-two-column">
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Advanced filtering</h4>
-            <div className="cs-column-image">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.09.21 AM.png" alt="Advanced filtering - Migration assessment with filter options" />
+            <div className="ta-clickable-image">
+              <FullscreenSlider images={advancedFilteringImages} className="ta-evidence-slider" />
             </div>
             <p className="cs-text">
               My advanced filtering designs were small in UX weight but impactful to allow users to simplify their application views to focus on the most important apps.
@@ -114,8 +129,8 @@ function TransformationAdvisor() {
           </div>
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Domain centric view</h4>
-            <div className="cs-column-image">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.04.14 AM.png" alt="Domain centric view - Moneybank workspace" />
+            <div className="ta-clickable-image">
+              <FullscreenSlider images={domainCentricImages} className="ta-evidence-slider" />
             </div>
             <p className="cs-text">
               User feedback told us that TA could be enhanced by reorganizing the structure of applications. This mid-fi work addressed that need.

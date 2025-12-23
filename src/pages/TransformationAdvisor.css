@@ -28,18 +28,33 @@
   margin-bottom: 20px;
 }
 
-/* Work and Evidence column images - fixed height crop */
-.transformation-advisor .cs-column-image {
-  height: 280px;
-  overflow: hidden;
+/* Work and Evidence clickable images */
+.ta-clickable-image {
+  margin-bottom: 15px;
   border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.transformation-advisor .cs-column-image img {
+.ta-evidence-slider .fs-slider-container {
+  height: 200px;
+  cursor: pointer;
+}
+
+.ta-evidence-slider .fs-slide img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
   object-position: top left;
+}
+
+.ta-evidence-slider .fs-indicators {
+  display: none;
+}
+
+.ta-evidence-slider .fs-click-hint {
+  font-size: 0.75rem;
+  padding: 4px 10px;
 }
 
 /* Caption */
@@ -56,8 +71,9 @@
     padding: 30px 30px 15px;
   }
 
-  .transformation-advisor .cs-column-image {
-    height: 220px;
+  .ta-evidence-slider .fs-slider-container,
+  .ta-evidence-slider .fs-slide img {
+    height: 180px;
   }
 }
 
@@ -66,8 +82,9 @@
     padding: 20px 20px 10px;
   }
 
-  .transformation-advisor .cs-column-image {
-    height: 200px;
+  .ta-evidence-slider .fs-slider-container,
+  .ta-evidence-slider .fs-slide img {
+    height: 160px;
   }
 
   .ta-caption {

@@ -7,7 +7,7 @@ import { AutoScrollSlider, FullscreenSlider, MarqueeSlider } from '../components
 import './WatsonOrchestrate.css';
 
 // Image paths from /public/images/watson-orchestrate/
-const heroImage = '/images/watson-orchestrate/Screenshot 2025-12-21 at 4.44.32 PM.png';
+const heroImage = '/images/watson-orchestrate/orchestrate-hero.png';
 
 const processImages = [
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.22.04 PM.png', alt: 'Miro board with user journey and wireframes' },

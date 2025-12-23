@@ -220,12 +220,22 @@ function WatsonOrchestrate() {
 
         <div className="cs-block">
           <h3 className="cs-block-title script-font">Awards this experience has achieved (so far)</h3>
-          <div className="cs-awards-simple">
-            <div className="cs-award-badge">
-              <img src="/images/watson-orchestrate/ces-2022-innovation-award.svg" alt="CES 2022 Innovation Award" />
+          <div className="cs-awards">
+            <div className="cs-award">
+              <div className="cs-award-logo">
+                <img src="/images/watson-orchestrate/honoree.png" alt="CES 2022 Innovation Award Honoree" />
+              </div>
+              <div className="cs-award-text">
+                <p>CES 2022 Innovation Award Product Honoree Software & Mobile Apps</p>
+              </div>
             </div>
-            <div className="cs-award-badge">
-              <img src="/images/watson-orchestrate/otaa-award.svg" alt="Outstanding Technical Achievement Award" />
+            <div className="cs-award">
+              <div className="cs-award-logo">
+                <img src="/images/watson-orchestrate/ibm-ota-360.jpeg" alt="IBM Outstanding Technical Achievement Award" />
+              </div>
+              <div className="cs-award-text">
+                <p>IBM Outstanding Technical Achievement Award (OTAA)</p>
+              </div>
             </div>
           </div>
         </div>

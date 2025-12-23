@@ -196,6 +196,35 @@
   font-size: 0.95rem;
 }
 
+/* Impact Section - Side by Side Layout */
+.cs-section-wide {
+  max-width: 1400px;
+  padding: 60px 80px;
+}
+
+.cs-impact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.cs-impact-text {
+  max-width: 500px;
+}
+
+.cs-impact-text .cs-section-title {
+  margin-bottom: 20px;
+}
+
+.cs-impact-text .cs-block-title {
+  margin-bottom: 20px;
+}
+
+.cs-impact-slider {
+  width: 100%;
+}
+
 /* Awards Section */
 .cs-awards {
   display: flex;
@@ -249,6 +278,15 @@
 
   .cs-two-column {
     gap: 30px;
+  }
+
+  .cs-impact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cs-impact-text {
+    max-width: 100%;
   }
 }
 

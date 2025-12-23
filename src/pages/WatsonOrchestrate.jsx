@@ -123,19 +123,25 @@ function WatsonOrchestrate() {
       </section>
 
       {/* My Impact Section */}
-      <section className="cs-section">
-        <h2 className="cs-section-title">My impact</h2>
-
-        <div className="cs-block">
-          <h3 className="cs-block-title script-font">Product UI & UX Designs</h3>
-          <p className="cs-text">
-            The playground experience required some knowledge of game design. We brainstormed our favorite educational/general game experiences to choose the right amount of "game" and "product"
-          </p>
-          <p className="cs-text">
-            I enjoyed wire-framing from lo fidelity to mid fidelity for this-working closing with dev and visual design to ensure feasibility and ease of hand off.
-          </p>
-          <FullscreenSlider images={productUIImages} interval={4000} />
+      <section className="cs-section cs-section-wide">
+        <div className="cs-impact-layout">
+          <div className="cs-impact-text">
+            <h2 className="cs-section-title">My impact</h2>
+            <h3 className="cs-block-title script-font">Product UI & UX Designs</h3>
+            <p className="cs-text">
+              The playground experience required some knowledge of game design. We brainstormed our favorite educational/general game experiences to choose the right amount of "game" and "product"
+            </p>
+            <p className="cs-text">
+              I enjoyed wire-framing from lo fidelity to mid fidelity for this-working closing with dev and visual design to ensure feasibility and ease of hand off.
+            </p>
+          </div>
+          <div className="cs-impact-slider">
+            <FullscreenSlider images={productUIImages} interval={4000} />
+          </div>
         </div>
+      </section>
+
+      <section className="cs-section">
 
         <div className="cs-block">
           <h3 className="cs-block-title script-font">Storytelling and content</h3>

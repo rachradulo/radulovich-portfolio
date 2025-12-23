@@ -47,6 +47,14 @@
   margin: 0 auto;
 }
 
+.cs-section-before-slider {
+  padding-bottom: 20px;
+}
+
+.cs-section-before-slider .cs-block {
+  margin-bottom: 0;
+}
+
 /* Full Width Section - for sliders and showcases */
 .cs-section-full {
   padding: 60px 0;

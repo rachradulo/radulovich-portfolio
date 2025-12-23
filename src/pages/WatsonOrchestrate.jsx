@@ -95,7 +95,7 @@ function WatsonOrchestrate() {
       </section>
 
       {/* Work and Evidence Section */}
-      <section className="cs-section">
+      <section className="cs-section cs-section-before-slider">
         <h2 className="cs-section-title">Work and evidence</h2>
 
         <div className="cs-block">
@@ -105,7 +105,7 @@ function WatsonOrchestrate() {
 
       {/* Full-width Process Slider */}
       <section className="wo-process-slider-section">
-        <AutoScrollSlider images={processImages} interval={8000} className="wo-process-slider" />
+        <AutoScrollSlider images={processImages} interval={4000} className="wo-process-slider" />
       </section>
 
       <section className="cs-section">

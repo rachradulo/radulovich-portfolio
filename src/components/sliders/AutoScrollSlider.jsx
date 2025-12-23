@@ -1,76 +1,88 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './AutoScrollSlider.css';
 
-function AutoScrollSlider({ images, interval = 5000, className = '' }) {
+function AutoScrollSlider({ images, interval = 4000, className = '' }) {
   const containerRef = useRef(null);
-  const animationRef = useRef(null);
   const isUserScrolling = useRef(false);
   const scrollTimeout = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Create duplicated images for seamless loop
   const duplicatedImages = [...images, ...images, ...images];
+
+  // Get slide width dynamically
+  const getSlideWidth = () => {
+    if (containerRef.current) {
+      const slides = containerRef.current.querySelectorAll('.slide');
+      if (slides.length > 0) {
+        const slide = slides[0];
+        const trackStyle = window.getComputedStyle(containerRef.current.querySelector('.slider-track'));
+        const gap = parseInt(trackStyle.gap) || 5;
+        return slide.offsetWidth + gap;
+      }
+    }
+    return 300;
+  };
 
   // Initialize scroll position to middle set
   useEffect(() => {
     if (containerRef.current) {
       const container = containerRef.current;
-      // Start at the middle set of images
       const singleSetWidth = container.scrollWidth / 3;
       container.scrollLeft = singleSetWidth;
     }
   }, []);
 
-  // Continuous smooth scroll animation
+  // Auto-advance to next image every interval
   useEffect(() => {
-    const scrollSpeed = 0.5; // pixels per frame
-
-    const animate = () => {
-      if (containerRef.current && !isUserScrolling.current) {
+    const advanceSlide = () => {
+      if (!isUserScrolling.current && containerRef.current) {
         const container = containerRef.current;
+        const slideWidth = getSlideWidth();
         const singleSetWidth = container.scrollWidth / 3;
 
-        container.scrollLeft += scrollSpeed;
+        // Smooth scroll to next slide
+        const targetScroll = container.scrollLeft + slideWidth;
 
-        // When we've scrolled past the second set, jump back to first set
-        if (container.scrollLeft >= singleSetWidth * 2) {
-          container.scrollLeft = singleSetWidth;
-        }
+        container.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+
+        // Check if we need to loop back (after animation completes)
+        setTimeout(() => {
+          if (container.scrollLeft >= singleSetWidth * 2 - slideWidth) {
+            container.scrollLeft = singleSetWidth;
+          }
+        }, 600);
+
+        setCurrentIndex((prev) => (prev + 1) % images.length);
       }
-      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animationRef.current = requestAnimationFrame(animate);
+    const intervalId = setInterval(advanceSlide, interval);
 
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [interval, images.length]);
 
   // Handle manual horizontal scroll
   const handleScroll = () => {
     isUserScrolling.current = true;
 
-    // Clear existing timeout
     if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
 
-    // Check for loop reset during manual scroll
     if (containerRef.current) {
       const container = containerRef.current;
       const singleSetWidth = container.scrollWidth / 3;
 
-      // If scrolled to end, jump to middle
       if (container.scrollLeft >= singleSetWidth * 2) {
         container.scrollLeft = singleSetWidth;
       }
-      // If scrolled to beginning, jump to middle
       if (container.scrollLeft <= 0) {
         container.scrollLeft = singleSetWidth;
       }
     }
 
-    // Resume auto-scroll after 3 seconds of no scrolling
     scrollTimeout.current = setTimeout(() => {
       isUserScrolling.current = false;
     }, 3000);
@@ -79,14 +91,11 @@ function AutoScrollSlider({ images, interval = 5000, className = '' }) {
   // Handle wheel events - only capture horizontal scroll gestures
   const handleWheel = (e) => {
     if (containerRef.current) {
-      // Only handle horizontal scroll gestures (trackpad swipe left/right)
-      // Let vertical scrolling pass through to the page
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
         containerRef.current.scrollLeft += e.deltaX;
         handleScroll();
       }
-      // Vertical scrolling (deltaY dominant) passes through naturally
     }
   };
 

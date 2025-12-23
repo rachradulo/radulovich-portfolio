@@ -197,20 +197,11 @@
 }
 
 /* Impact Section - Side by Side Layout */
-.cs-section-wide {
-  max-width: 1400px;
-  padding: 60px 80px;
-}
-
 .cs-impact-layout {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
   align-items: start;
-}
-
-.cs-impact-text {
-  max-width: 500px;
 }
 
 .cs-impact-text .cs-section-title {

@@ -123,7 +123,7 @@ function WatsonOrchestrate() {
       </section>
 
       {/* My Impact Section */}
-      <section className="cs-section cs-section-wide">
+      <section className="cs-section">
         <div className="cs-impact-layout">
           <div className="cs-impact-text">
             <h2 className="cs-section-title">My impact</h2>

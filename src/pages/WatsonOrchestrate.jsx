@@ -141,17 +141,21 @@ function WatsonOrchestrate() {
         </div>
       </section>
 
-      <section className="cs-section">
-
+      <section className="cs-section cs-section-before-slider">
         <div className="cs-block">
           <h3 className="cs-block-title script-font">Storytelling and content</h3>
           <p className="cs-text">
             We built out a detailed to-be user journey from our research. We tested it, and then built out alternative paths with it for the experience.
           </p>
-          <div className="cs-single-image">
-            <img src="/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.02.48 PM.png" alt="User journey flow diagram" />
-          </div>
         </div>
+      </section>
+
+      {/* Full-width User Journey Image */}
+      <section className="cs-full-width-image">
+        <img src="/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.02.48 PM.png" alt="User journey flow diagram" />
+      </section>
+
+      <section className="cs-section">
 
         <div className="cs-two-column">
           <div className="cs-column">

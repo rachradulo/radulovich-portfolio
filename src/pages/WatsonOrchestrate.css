@@ -62,6 +62,18 @@
   margin: 0;
 }
 
+/* Full Width Image */
+.cs-full-width-image {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.cs-full-width-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Watson Orchestrate Process Slider - Full Width */
 .wo-process-slider-section {
   padding: 20px 0;

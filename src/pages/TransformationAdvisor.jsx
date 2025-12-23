@@ -61,6 +61,11 @@ function TransformationAdvisor() {
             <li>Improved dashboard filtering to support diverse customer needs, allowing users to customize views and track progress throughout their modernization journey</li>
           </ul>
         </div>
+
+        <div className="cs-single-image">
+          <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.18.22 AM.png" alt="Screen iteration from TA rolled up cost work - collection of wireframe thumbnails" />
+        </div>
+        <p className="ta-caption script-font">Screen iteration from TA rolled up cost work</p>
       </section>
 
       {/* Full-width Platform Screenshots Slider */}
@@ -111,7 +116,6 @@ function TransformationAdvisor() {
             </div>
           </div>
         </div>
-        <p className="ta-caption script-font">Screen iteration from TA rolled up cost work</p>
       </section>
 
       {/* Journey Map Section */}

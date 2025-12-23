@@ -171,7 +171,7 @@ function WatsonOrchestrate() {
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Playbacks</h4>
             <div className="cs-column-image">
-              <img src="/images/watson-orchestrate/Screenshot 2025-12-21 at 4.44.32 PM.png" alt="Team playback presentation" />
+              <img src="/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.25.12 PM.png" alt="Team playback presentation" />
             </div>
             <p className="cs-text">
               To ensure stakeholder alignment, we presented our work often and at all levels of fidelity.

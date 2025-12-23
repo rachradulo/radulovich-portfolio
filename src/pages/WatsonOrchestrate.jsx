@@ -10,8 +10,10 @@ import './WatsonOrchestrate.css';
 const heroImage = '/images/Watson-Orchestrate-Explainer-5E-Desktop.webp';
 
 const processImages = [
-  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.22.04 PM.png', alt: 'Miro board with user journey and wireframes' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.22.04 PM.png', alt: 'Playground wireframes with yellow sticky notes' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.22.14 PM.png', alt: 'Miro board with planning and wireframes' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.06.39 PM.png', alt: 'Wireframe user flow board' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 6.50.29 PM.png', alt: 'Mid-fi prototype - Chat interface with mission panel' },
 ];
 
 const productUIImages = [
@@ -98,9 +100,15 @@ function WatsonOrchestrate() {
 
         <div className="cs-block">
           <h3 className="cs-block-title script-font">Process and collaboration</h3>
-          <AutoScrollSlider images={processImages} interval={5000} />
         </div>
+      </section>
 
+      {/* Full-width Process Slider */}
+      <section className="wo-process-slider-section">
+        <AutoScrollSlider images={processImages} interval={5000} className="wo-process-slider" />
+      </section>
+
+      <section className="cs-section">
         <div className="cs-tags">
           <span className="cs-tag script-font">UX design</span>
           <span className="cs-tag-separator">,</span>

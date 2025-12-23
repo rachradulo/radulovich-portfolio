@@ -77,13 +77,13 @@
 .wo-process-slider .slide {
   width: auto;
   max-width: none;
-  max-height: 400px;
+  max-height: 550px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .wo-process-slider .slide img {
-  height: 400px;
+  height: 550px;
   width: auto;
   object-fit: contain;
 }

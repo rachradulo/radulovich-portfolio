@@ -3,10 +3,24 @@ import PageHeader from '../components/PageHeader';
 import Navigation from '../components/Navigation';
 import ProjectNavigation from '../components/ProjectNavigation';
 import CaseStudyFooter from '../components/CaseStudyFooter';
+import { FullscreenSlider } from '../components/sliders';
 import './WatsonOrchestrate.css';
 import './TrustedIdentity.css';
 
-const heroImage = '/images/Identity /Screen Shot 2019-10-07 at 10.09.06 PM.png';
+const heroImage = '/images/trusted-identity.jpg';
+
+// Alpha showcase slider images (Page_16 through Page_24)
+const alphaShowcaseImages = [
+  { src: '/images/Identity /identity _Page_16.png', alt: 'IBM Trusted Identity Alpha - Slide 1' },
+  { src: '/images/Identity /identity _Page_17.png', alt: 'IBM Trusted Identity Alpha - Slide 2' },
+  { src: '/images/Identity /identity _Page_18.png', alt: 'IBM Trusted Identity Alpha - Slide 3' },
+  { src: '/images/Identity /identity _Page_19.png', alt: 'IBM Trusted Identity Alpha - Slide 4' },
+  { src: '/images/Identity /identity _Page_20.png', alt: 'IBM Trusted Identity Alpha - Slide 5' },
+  { src: '/images/Identity /identity _Page_21.png', alt: 'IBM Trusted Identity Alpha - Slide 6' },
+  { src: '/images/Identity /identity _Page_22.png', alt: 'IBM Trusted Identity Alpha - Slide 7' },
+  { src: '/images/Identity /identity _Page_23.png', alt: 'IBM Trusted Identity Alpha - Slide 8' },
+  { src: '/images/Identity /identity _Page_24.png', alt: 'IBM Trusted Identity Alpha - Slide 9' },
+];
 
 function TrustedIdentity() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,14 +88,8 @@ function TrustedIdentity() {
 
       {/* Alpha Showcase Section */}
       <section className="ti-alpha-showcase">
-        <div className="ti-alpha-content">
-          <p className="ti-case-study-label script-font">Case Study 1</p>
-          <h2 className="ti-alpha-title">IBM Trusted Identity Alpha</h2>
-          <p className="ti-alpha-meta"><strong>Role:</strong> Lead Designer</p>
-          <p className="ti-alpha-meta"><strong>Timeline:</strong> October 2018- April 2019</p>
-        </div>
-        <div className="ti-alpha-image">
-          <img src="/images/Identity /identity _Page_17.png" alt="IBM Trusted Identity Alpha - Extension for Agency Account interface" />
+        <div className="ti-alpha-slider">
+          <FullscreenSlider images={alphaShowcaseImages} className="ti-alpha-showcase-slider" />
         </div>
       </section>
 
@@ -137,7 +145,7 @@ function TrustedIdentity() {
       <section className="cs-section">
         <p className="ti-sketch-caption script-font">Sketch prototyping screens for the web app</p>
         <div className="ti-sketch-image">
-          <img src="/images/Identity /identity _Page_18.png" alt="Sketch prototyping screens" />
+          <img src="/images/Identity /Screen Shot 2019-10-07 at 10.51.12 PM.png" alt="Sketch prototyping screens" />
         </div>
       </section>
 
@@ -152,8 +160,14 @@ function TrustedIdentity() {
           </p>
         </div>
 
-        <div className="ti-prototype-image">
-          <img src="/images/Identity /identity _Page_19.png" alt="Web App UI Screens - full interface" />
+        {/* Two column Web App UI images */}
+        <div className="ti-prototype-grid">
+          <div className="ti-prototype-column">
+            <img src="/images/Identity /Screen Shot 2019-10-08 at 9.12.08 AM.png" alt="Agency Account Dashboard" />
+          </div>
+          <div className="ti-prototype-column">
+            <img src="/images/Identity /Screen Shot 2019-10-08 at 8.59.20 AM.png" alt="Welcome to your Agent screen" />
+          </div>
         </div>
 
         {/* Chrome Extension and Mobile */}
@@ -161,7 +175,7 @@ function TrustedIdentity() {
           <div className="ti-app-column">
             <h4 className="ti-app-title script-font">Chrome Extension UI</h4>
             <div className="ti-app-image">
-              <img src="/images/Identity /identity _Page_20.png" alt="Chrome Extension UI screens" />
+              <img src="/images/Identity /Screen Shot 2019-10-08 at 9.07.55 AM.png" alt="Chrome Extension UI screens" />
             </div>
             <p className="cs-text">
               The chrome extension we worked on acted as a digital wallet within the browser. It was a differentiator in the decentralized identity space.
@@ -170,7 +184,7 @@ function TrustedIdentity() {
           <div className="ti-app-column">
             <h4 className="ti-app-title script-font">Mobile Application</h4>
             <div className="ti-app-image">
-              <img src="/images/Identity /identity _Page_21.png" alt="Mobile Application screens" />
+              <img src="/images/Identity /Screen Shot 2019-10-08 at 9.08.44 AM.png" alt="Mobile Application screens" />
             </div>
             <p className="cs-text">
               Verify Creds mobile app enables users to manage their identity credentials on the go.
@@ -179,9 +193,13 @@ function TrustedIdentity() {
         </div>
       </section>
 
-      {/* Large Image Showcase */}
-      <section className="ti-large-showcase">
-        <img src="/images/Identity /identity _Page_24.png" alt="IBM Trusted Identity comprehensive view" />
+      {/* Photo Gallery Row */}
+      <section className="ti-photo-gallery">
+        <img src="/images/Identity /IMG_3042.JPG" alt="Workshop facilitation" />
+        <img src="/images/Identity /Screen Shot 2019-10-07 at 10.42.28 PM.png" alt="Team collaboration" />
+        <img src="/images/Identity /Image from iOS (6).jpg" alt="IBM Watson team" />
+        <img src="/images/Identity /IMG_3044.JPG" alt="Conference presentation" />
+        <img src="/images/Identity /Screen Shot 2019-10-07 at 10.38.39 PM.png" alt="Design thinking session" />
       </section>
 
       {/* Reflection Section */}
@@ -191,10 +209,6 @@ function TrustedIdentity() {
         <p className="cs-text">
           This product put me into conferences, client teams, and workshops in a way that I didn't think I was capable of, and I am so thankful for the challenges that made me grow. As the sole designer on the team, I got to wear every hat: sprint lead, user researcher, and product management. My passion for decentralized identity grew on this team and I later went on to founding a startup. This project was unforgettable and IBM, and has as a fun fact—I recently learned it went open source making even my early onboarding work now publicly accessible. This team made me a confident facilitator, better researcher, and better designer.
         </p>
-
-        <a href="https://github.com/IBM-Blockchain-Identity/verify-creds-samples" target="_blank" rel="noopener noreferrer" className="ti-alpha-button">
-          Try out the Alpha
-        </a>
       </section>
 
       {/* Project Navigation */}

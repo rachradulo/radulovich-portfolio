@@ -94,7 +94,7 @@ function TransformationAdvisor() {
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Rolled up cost</h4>
             <div className="cs-column-image">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 3.57.22 PM.png" alt="Rolled up cost - Java Applications interface" />
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.46 PM.png" alt="Rolled up cost - Java Applications with Common JAR files" />
             </div>
             <p className="cs-text">
               The aim of this work was to give a more accurate estimate of how many development days applications would take to modernize based on the number of shared files between them.
@@ -106,7 +106,7 @@ function TransformationAdvisor() {
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Advanced filtering</h4>
             <div className="cs-column-image">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.08.40 AM.png" alt="Advanced filtering - Migration assessment with filter options" />
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.09.21 AM.png" alt="Advanced filtering - Migration assessment with filter options" />
             </div>
             <p className="cs-text">
               My advanced filtering designs were small in UX weight but impactful to allow users to simplify their application views to focus on the most important apps.

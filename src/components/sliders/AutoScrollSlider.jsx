@@ -64,12 +64,17 @@ function AutoScrollSlider({ images, interval = 5000, className = '' }) {
     }, 3000);
   };
 
-  // Handle wheel events for horizontal scrolling
+  // Handle wheel events - only capture horizontal scroll gestures
   const handleWheel = (e) => {
     if (containerRef.current) {
-      e.preventDefault();
-      containerRef.current.scrollLeft += e.deltaY;
-      handleScroll();
+      // Only handle horizontal scroll gestures (trackpad swipe left/right)
+      // Let vertical scrolling pass through to the page
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        containerRef.current.scrollLeft += e.deltaX;
+        handleScroll();
+      }
+      // Vertical scrolling (deltaY dominant) passes through naturally
     }
   };
 

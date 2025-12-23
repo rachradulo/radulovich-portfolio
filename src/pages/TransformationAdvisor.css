@@ -1,8 +1,14 @@
 /* Transformation Advisor - Case Study Styles */
 
-/* Hero image top-aligned */
+/* Hero image top-aligned and cropped left edge */
+.transformation-advisor .cs-hero-image {
+  overflow: hidden;
+}
+
 .transformation-advisor .cs-hero-image img {
   object-position: top;
+  margin-left: -4px;
+  width: calc(100% + 4px);
 }
 
 /* Wide images - full width with minimal padding */

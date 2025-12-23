@@ -62,33 +62,12 @@ function TransformationAdvisor() {
           </ul>
         </div>
 
-        <div className="cs-single-image">
-          <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.18.22 AM.png" alt="Screen iteration from TA rolled up cost work - collection of wireframe thumbnails" />
-        </div>
-        <p className="ta-caption script-font">Screen iteration from TA rolled up cost work</p>
       </section>
 
-      {/* Full-width Platform Screenshots Slider */}
-      <section className="ta-platform-showcase">
-        <div className="ta-slider-container">
-          <div className="ta-slider-track">
-            <div className="ta-slider-item">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.31 PM.png" alt="Transformation Advisor interface view 1" />
-            </div>
-            <div className="ta-slider-item">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.46 PM.png" alt="Transformation Advisor interface view 2" />
-            </div>
-            <div className="ta-slider-item">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.59 PM.png" alt="Transformation Advisor interface view 3" />
-            </div>
-            <div className="ta-slider-item">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.53.00 PM.png" alt="Transformation Advisor interface view 4" />
-            </div>
-            <div className="ta-slider-item">
-              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.53.08 PM.png" alt="Transformation Advisor interface view 5" />
-            </div>
-          </div>
-        </div>
+      {/* Screen Iteration - Full Width */}
+      <section className="cs-full-width-image ta-wide-image">
+        <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.18.22 AM.png" alt="Screen iteration from TA rolled up cost work - collection of wireframe thumbnails" />
+        <p className="ta-caption script-font">Screen iteration from TA rolled up cost work</p>
       </section>
 
       {/* Work and Evidence Section */}
@@ -145,12 +124,10 @@ function TransformationAdvisor() {
         </div>
       </section>
 
-      {/* Journey Map Section */}
-      <section className="cs-section">
-        <h3 className="cs-block-title script-font">Journey Map</h3>
-        <div className="ta-journey-map">
-          <img src="/images/Transformation-advisor/journey map V1_2x.png" alt="Transformation Advisor user journey map" />
-        </div>
+      {/* Journey Map Section - Full Width */}
+      <section className="cs-full-width-image ta-wide-image">
+        <h3 className="cs-block-title script-font ta-journey-title">TA user journey map</h3>
+        <img src="/images/Transformation-advisor/journey map V1_2x.png" alt="Transformation Advisor user journey map" />
       </section>
 
       {/* Reflection Section */}

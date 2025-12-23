@@ -5,75 +5,35 @@
   object-position: top;
 }
 
-/* Platform Showcase - Full width dark section with horizontal scroll */
-.ta-platform-showcase {
-  background: #1a1a2e;
-  padding: 60px 0;
-  margin: 0;
-  overflow: hidden;
+/* Wide images - full width with minimal padding */
+.ta-wide-image {
+  padding: 40px 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.ta-slider-container {
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.ta-wide-image .ta-caption {
+  margin-top: 15px;
+  text-align: center;
 }
 
-.ta-slider-container::-webkit-scrollbar {
-  display: none;
+/* Journey map title */
+.ta-journey-title {
+  margin-bottom: 20px;
 }
 
-.ta-slider-track {
-  display: flex;
-  gap: 20px;
-  padding: 0 80px;
-  width: max-content;
-}
-
-.ta-slider-item {
-  flex-shrink: 0;
-  width: 400px;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.ta-slider-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Comparison Grid - Research / Rolled up cost */
-.ta-comparison-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.ta-comparison-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.ta-comparison-title {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.ta-comparison-image {
-  border-radius: 4px;
+/* Work and Evidence column images - fixed height crop */
+.transformation-advisor .cs-column-image {
+  height: 280px;
   overflow: hidden;
   border: 1px solid var(--light-gray);
 }
 
-.ta-comparison-image img {
+.transformation-advisor .cs-column-image img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
 }
 
 /* Caption */
@@ -84,47 +44,24 @@
   margin-bottom: 30px;
 }
 
-/* Journey Map */
-.ta-journey-map {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.ta-journey-map img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
-  .ta-slider-track {
-    padding: 0 50px;
+  .ta-wide-image {
+    padding: 30px 30px 15px;
   }
 
-  .ta-slider-item {
-    width: 350px;
+  .transformation-advisor .cs-column-image {
+    height: 220px;
   }
 }
 
 @media (max-width: 768px) {
-  .ta-platform-showcase {
-    padding: 40px 0;
+  .ta-wide-image {
+    padding: 20px 20px 10px;
   }
 
-  .ta-slider-track {
-    padding: 0 30px;
-    gap: 15px;
-  }
-
-  .ta-slider-item {
-    width: 280px;
-  }
-
-  .ta-comparison-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .transformation-advisor .cs-column-image {
+    height: 200px;
   }
 
   .ta-caption {

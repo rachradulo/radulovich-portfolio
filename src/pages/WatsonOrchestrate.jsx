@@ -26,8 +26,12 @@ const outcomeImages = [
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.18.04 PM.png', alt: 'Intro screen - A first look at IBM Watson Orchestrate' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.18.16 PM.png', alt: 'Your mission modal - Sales Associate role' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.18.33 PM.png', alt: 'Chat onboarding with instructions' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.18.55 PM.png', alt: 'Capabilities found panel' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.19.24 PM.png', alt: 'Reasoning view' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.19.55 PM.png', alt: 'Chat interaction with graph view' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.20.21 PM.png', alt: 'Chat with capabilities unlocked' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.20.30 PM.png', alt: 'Congrats modal - mission complete' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.20.41 PM.png', alt: 'End screen - Watson Orchestrate capabilities' },
 ];
 
 const pressImages = [
@@ -181,14 +185,27 @@ function WatsonOrchestrate() {
       </section>
 
       {/* Outcome Section */}
-      <section className="cs-section">
+      <section className="cs-section cs-section-before-slider">
         <div className="cs-block">
           <h3 className="cs-block-title script-font">Outcome: Gamified Watson Orchestrate Playground</h3>
-          <FullscreenSlider images={outcomeImages} interval={4000} />
-          <p className="cs-text">
-            The final outcome for initial launch, was a gamified chat experience. Using natural language (or built in hints) trial users leveraged WO to accomplish their sales challenge. Along the way, they learn about the product capabilities by unlocking new capabilities as they were used and completing tasks. A successful user would complete the playground experience within 10 minutes and would hopefully share their new knowledge of the coming product to their network.
-          </p>
         </div>
+      </section>
+
+      {/* Full-width Outcome Grid */}
+      <section className="cs-outcome-grid-section">
+        <div className="cs-outcome-grid">
+          {outcomeImages.map((image, index) => (
+            <div key={index} className="cs-outcome-item">
+              <img src={image.src} alt={image.alt} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="cs-section">
+        <p className="cs-text">
+          The final outcome for initial launch, was a gamified chat experience. Using natural language (or built in hints) trial users leveraged WO to accomplish their sales challenge. Along the way, they learn about the product capabilities by unlocking new capabilities as they were used and completing tasks. A successful user would complete the playground experience within 10 minutes and would hopefully share their new knowledge of the coming product to their network.
+        </p>
       </section>
 
       {/* Press Section */}

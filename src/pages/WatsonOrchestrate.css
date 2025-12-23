@@ -74,6 +74,48 @@
   display: block;
 }
 
+/* Outcome Grid - Full Width */
+.cs-outcome-grid-section {
+  width: 100%;
+  padding: 20px 40px 40px;
+}
+
+.cs-outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.cs-outcome-item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.cs-outcome-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .cs-outcome-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cs-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-outcome-grid-section {
+    padding: 20px 20px 40px;
+  }
+}
+
 /* Watson Orchestrate Process Slider - Full Width */
 .wo-process-slider-section {
   padding: 20px 0;

@@ -98,22 +98,49 @@ function TransformationAdvisor() {
         <div className="cs-block">
           <h3 className="cs-block-title script-font">UX, Research and Visual design work</h3>
           <p className="cs-text">
-            IBM Transformation Advisor (TA) is a product to help businesses modernize monolith applications and move them to the cloud. In my 4 months on the team, I collaborated with design and developers to ideate on how to implement new tech in a usable way. This team allowed me to use and grow my UX skills as well as research and visual design skills. My biggest impact on this project was tackling a UX challenge of "rolled up cost" to give a more accurate, rolled-up estimate of development days modernization would take.
+            IBM Transformation Advisor (TA) is a product to help businesses modernize monolith applications and move them to the cloud. In my 6 months on the team, I collaborated with design and developers to ideate on how to implement new tech in a usable way. This team allowed me to use and grow my UX skills as well as research and visual design skills. My biggest impact on this project was tackling a UX challenge of "rolled up cost" to give a more accurate, rolled-up estimate of development days modernization would take.
           </p>
         </div>
 
-        <div className="ta-comparison-grid">
-          <div className="ta-comparison-column">
-            <h4 className="ta-comparison-title script-font">Research</h4>
-            <div className="ta-comparison-image">
+        <div className="cs-two-column">
+          <div className="cs-column">
+            <h4 className="cs-column-title script-font">Research</h4>
+            <div className="cs-column-image">
               <img src="/images/Transformation-advisor/1. a copy 6.png" alt="Research - Scope/big questions analysis" />
             </div>
+            <p className="cs-text">
+              I planned, ran, and synthesized research sessions to understand the goals of future TA versions. I presented findings and used those findings to impact design work moving forward.
+            </p>
           </div>
-          <div className="ta-comparison-column">
-            <h4 className="ta-comparison-title script-font">Rolled up cost</h4>
-            <div className="ta-comparison-image">
-              <img src="/images/Transformation-advisor/2. b  copy 20.png" alt="Rolled up cost wireframe iteration" />
+          <div className="cs-column">
+            <h4 className="cs-column-title script-font">Rolled up cost</h4>
+            <div className="cs-column-image">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-07 at 3.57.22 PM.png" alt="Rolled up cost - Java Applications interface" />
             </div>
+            <p className="cs-text">
+              The aim of this work was to give a more accurate estimate of how many development days applications would take to modernize based on the number of shared files between them.
+            </p>
+          </div>
+        </div>
+
+        <div className="cs-two-column">
+          <div className="cs-column">
+            <h4 className="cs-column-title script-font">Advanced filtering</h4>
+            <div className="cs-column-image">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.08.40 AM.png" alt="Advanced filtering - Migration assessment with filter options" />
+            </div>
+            <p className="cs-text">
+              My advanced filtering designs were small in UX weight but impactful to allow users to simplify their application views to focus on the most important apps.
+            </p>
+          </div>
+          <div className="cs-column">
+            <h4 className="cs-column-title script-font">Domain centric view</h4>
+            <div className="cs-column-image">
+              <img src="/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.04.14 AM.png" alt="Domain centric view - Moneybank workspace" />
+            </div>
+            <p className="cs-text">
+              User feedback told us that TA could be enhanced by reorganizing the structure of applications. This mid-fi work addressed that need.
+            </p>
           </div>
         </div>
       </section>

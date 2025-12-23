@@ -255,6 +255,23 @@
 }
 
 /* Awards Section */
+.cs-awards-simple {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 0;
+}
+
+.cs-award-badge {
+  width: 150px;
+  height: auto;
+}
+
+.cs-award-badge img {
+  width: 100%;
+  height: auto;
+}
+
 .cs-awards {
   display: flex;
   gap: 40px;

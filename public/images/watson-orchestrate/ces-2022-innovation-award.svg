@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280">
+  <defs>
+    <linearGradient id="cesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A3E0"/>
+      <stop offset="50%" style="stop-color:#7AB800"/>
+      <stop offset="100%" style="stop-color:#FFD100"/>
+    </linearGradient>
+  </defs>
+  <!-- Badge shape -->
+  <rect x="10" y="10" width="180" height="200" rx="8" fill="white" stroke="#ddd" stroke-width="1"/>
+  <!-- CES Logo area -->
+  <rect x="10" y="10" width="180" height="60" rx="8" fill="url(#cesGrad)"/>
+  <rect x="10" y="50" width="180" height="20" fill="url(#cesGrad)"/>
+  <text x="100" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white">CES</text>
+  <!-- Innovation Awards text -->
+  <text x="100" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">INNOVATION</text>
+  <text x="100" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">AWARDS</text>
+  <!-- Year badge -->
+  <rect x="40" y="140" width="120" height="50" fill="#1a5a96"/>
+  <polygon points="40,190 100,210 160,190" fill="#1a5a96"/>
+  <text x="100" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">2022</text>
+  <text x="100" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">HONOREE</text>
+</svg>

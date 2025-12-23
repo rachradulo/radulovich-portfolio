@@ -6,7 +6,7 @@
 
 .marquee-track {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   animation: marquee-scroll linear infinite;
   width: max-content;
 }
@@ -44,6 +44,6 @@
   }
 
   .marquee-track {
-    gap: 20px;
+    gap: 10px;
   }
 }

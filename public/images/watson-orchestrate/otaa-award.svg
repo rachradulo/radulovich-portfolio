@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280">
+  <!-- White background with border -->
+  <rect x="10" y="10" width="180" height="260" rx="8" fill="white" stroke="#ddd" stroke-width="1"/>
+  <!-- Red maze/labyrinth circle -->
+  <g transform="translate(100, 100)">
+    <!-- Outer circles -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#c41e3a" stroke-width="4"/>
+    <circle cx="0" cy="0" r="48" fill="none" stroke="#c41e3a" stroke-width="4"/>
+    <circle cx="0" cy="0" r="36" fill="none" stroke="#c41e3a" stroke-width="4"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#c41e3a" stroke-width="4"/>
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#c41e3a" stroke-width="4"/>
+    <circle cx="0" cy="0" r="4" fill="#c41e3a"/>
+    <!-- Maze breaks -->
+    <rect x="-3" y="-65" width="6" height="15" fill="white"/>
+    <rect x="-3" y="50" width="6" height="15" fill="white"/>
+    <rect x="-65" y="-3" width="15" height="6" fill="white"/>
+    <rect x="50" y="-3" width="15" height="6" fill="white"/>
+    <!-- Diagonal breaks -->
+    <rect x="30" y="-50" width="6" height="15" fill="white" transform="rotate(45 33 -42)"/>
+    <rect x="-50" y="30" width="6" height="15" fill="white" transform="rotate(45 -47 37)"/>
+    <rect x="-50" y="-50" width="6" height="15" fill="white" transform="rotate(-45 -47 -42)"/>
+    <rect x="30" y="30" width="6" height="15" fill="white" transform="rotate(-45 33 37)"/>
+  </g>
+  <!-- Text -->
+  <text x="100" y="195" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#333">Outstanding Technical</text>
+  <text x="100" y="215" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#333">Achievement Award</text>
+</svg>

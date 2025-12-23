@@ -35,10 +35,11 @@ const outcomeImages = [
 ];
 
 const pressImages = [
-  { src: '/images/watson-orchestrate/ibm-think-2020-digital-event-case-study-facebook.jpeg', alt: 'IBM Think typography graphic' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.30.05 PM.png', alt: 'Watson Orchestrate connected nodes visualization' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.32.19 PM.png', alt: 'IBM Blog - Work Smarter Not Harder article' },
   { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.37.15 PM.png', alt: 'How IBM Watson Orchestrate automates procurement article' },
+  { src: '/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.28.45 PM.png', alt: 'CES 2022 Innovation Award' },
+  { src: '/images/watson-orchestrate/E1HzkhdWQAQO327.jpeg', alt: 'IBM OTAA Award - Think Conference Presentation' },
 ];
 
 function WatsonOrchestrate() {
@@ -219,22 +220,12 @@ function WatsonOrchestrate() {
 
         <div className="cs-block">
           <h3 className="cs-block-title script-font">Awards this experience has achieved (so far)</h3>
-          <div className="cs-awards">
-            <div className="cs-award">
-              <div className="cs-award-logo">
-                <img src="/images/watson-orchestrate/Screen Shot 2021-12-08 at 5.28.45 PM.png" alt="CES 2022 Innovation Award" />
-              </div>
-              <div className="cs-award-text">
-                <p>CES 2022 Innovation Award Product Honoree Software & Mobile Apps</p>
-              </div>
+          <div className="cs-awards-simple">
+            <div className="cs-award-badge">
+              <img src="/images/watson-orchestrate/ces-2022-innovation-award.svg" alt="CES 2022 Innovation Award" />
             </div>
-            <div className="cs-award">
-              <div className="cs-award-logo">
-                <img src="/images/watson-orchestrate/E1HzkhdWQAQO327.jpeg" alt="IBM OTAA Award - Think Conference Presentation" />
-              </div>
-              <div className="cs-award-text">
-                <p>IBM Outstanding Technical Achievement Award (OTAA)</p>
-              </div>
+            <div className="cs-award-badge">
+              <img src="/images/watson-orchestrate/otaa-award.svg" alt="Outstanding Technical Achievement Award" />
             </div>
           </div>
         </div>

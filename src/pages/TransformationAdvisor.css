@@ -1,5 +1,10 @@
 /* Transformation Advisor - Case Study Styles */
 
+/* Hero image top-aligned */
+.transformation-advisor .cs-hero-image img {
+  object-position: top;
+}
+
 /* Platform Showcase - Full width dark section with horizontal scroll */
 .ta-platform-showcase {
   background: #1a1a2e;

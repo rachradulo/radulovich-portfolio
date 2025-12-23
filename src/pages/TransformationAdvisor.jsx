@@ -9,16 +9,16 @@ import './TransformationAdvisor.css';
 
 // Work and Evidence images for clickable fullscreen viewing
 const researchImages = [
-  { src: '/images/Transformation-advisor/1. a copy 6.png', alt: 'Research - Scope/big questions analysis' }
+  { src: '/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.04.14 AM.png', alt: 'Research - Scope/big questions analysis' }
 ];
 const rolledUpCostImages = [
-  { src: '/images/Transformation-advisor/Screen Shot 2021-12-07 at 11.49.46 PM.png', alt: 'Rolled up cost - Java Applications with Common JAR files' }
+  { src: '/images/Transformation-advisor/Screen Shot 2021-12-07 at 3_edited.jpg', alt: 'Rolled up cost - Java Applications with Common JAR files and cost columns' }
 ];
 const advancedFilteringImages = [
-  { src: '/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.09.21 AM.png', alt: 'Advanced filtering - Migration assessment with filter options' }
+  { src: '/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.10.08 AM.png', alt: 'Advanced filtering - JBoss Migration assessment with filter dropdown' }
 ];
 const domainCentricImages = [
-  { src: '/images/Transformation-advisor/Screen Shot 2021-12-08 at 12.04.14 AM.png', alt: 'Domain centric view - Moneybank workspace' }
+  { src: '/images/Transformation-advisor/1. a copy 6.png', alt: 'Domain centric view - Moneybank workspace' }
 ];
 
 const heroImage = '/images/Transformation-advisor/Screen Shot 2021-12-07 at 3.57.22 PM.png';
@@ -121,7 +121,7 @@ function TransformationAdvisor() {
           <div className="cs-column">
             <h4 className="cs-column-title script-font">Advanced filtering</h4>
             <div className="ta-clickable-image">
-              <FullscreenSlider images={advancedFilteringImages} className="ta-evidence-slider" />
+              <FullscreenSlider images={advancedFilteringImages} className="ta-evidence-slider ta-filtering-slider" />
             </div>
             <p className="cs-text">
               My advanced filtering designs were small in UX weight but impactful to allow users to simplify their application views to focus on the most important apps.

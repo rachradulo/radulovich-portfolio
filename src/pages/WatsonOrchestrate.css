@@ -7,7 +7,7 @@
 /* Hero Section */
 .cs-hero {
   padding: 120px 80px 60px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -39,7 +39,7 @@
 /* Section Styles */
 .cs-section {
   padding: 60px 80px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -197,12 +197,12 @@
 @media (max-width: 1024px) {
   .cs-hero {
     padding: 100px 50px 50px;
-    max-width: 800px;
+    max-width: 900px;
   }
 
   .cs-section {
     padding: 50px;
-    max-width: 800px;
+    max-width: 900px;
   }
 
   .cs-title {

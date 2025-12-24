@@ -8,6 +8,7 @@ import WatsonOrchestrate from './pages/WatsonOrchestrate';
 import BlockchainPlatform from './pages/BlockchainPlatform';
 import TransformationAdvisor from './pages/TransformationAdvisor';
 import TrustedIdentity from './pages/TrustedIdentity';
+import About from './pages/About';
 import './styles/index.css';
 
 function HomePage() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/work/blockchain-platform" element={<BlockchainPlatform />} />
         <Route path="/work/transformation-advisor" element={<TransformationAdvisor />} />
         <Route path="/work/trusted-identity" element={<TrustedIdentity />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );

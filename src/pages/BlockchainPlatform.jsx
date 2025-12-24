@@ -6,17 +6,81 @@ import CaseStudyFooter from '../components/CaseStudyFooter';
 import './WatsonOrchestrate.css';
 import './BlockchainPlatform.css';
 
-const heroImage = '/images/Blockchain/6_platform.png';
+const heroImage = '/images/blockchain-platform.png';
+
+// Fade carousel images
+const showcaseImages = [
+  { src: '/images/Blockchain/Hifi_2x (2)_edited.jpg', alt: 'IBM Blockchain Platform UI - View 1' },
+  { src: '/images/Blockchain/Hifi_2x_edited.jpg', alt: 'IBM Blockchain Platform UI - View 2' },
+  { src: '/images/Blockchain/Hifi_2x (1)_edited.jpg', alt: 'IBM Blockchain Platform UI - View 3' },
+  { src: '/images/Blockchain/Hifi Copy 2_2x_edited.jpg', alt: 'IBM Blockchain Platform UI - View 4' },
+];
+
+// Getting started app (Buy app) images
+const gettingStartedImages = [
+  { src: '/images/Blockchain/1_create_select plan.png', alt: 'Select plan screen' },
+  { src: '/images/Blockchain/2_create_choose cluster.png', alt: 'Choose cluster screen' },
+  { src: '/images/Blockchain/4. wait time_cart.png', alt: 'Wait time with cart screen' },
+  { src: '/images/Blockchain/5_complete with cart.png', alt: 'Complete with cart screen' },
+  { src: '/images/Blockchain/5. wait time copy 13.png', alt: 'Wait time screen' },
+  { src: '/images/Blockchain/6_platform.png', alt: 'Platform screen' },
+];
 
 function BlockchainPlatform() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [fullscreenOpen, setFullscreenOpen] = useState(false);
+  const [fullscreenIndex, setFullscreenIndex] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Auto-cycle through showcase images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % showcaseImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
+
+  // Fullscreen gallery handlers
+  const openFullscreen = (index) => {
+    setFullscreenIndex(index);
+    setFullscreenOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeFullscreen = () => {
+    setFullscreenOpen(false);
+    document.body.style.overflow = '';
+  };
+
+  const goToPrev = (e) => {
+    e.stopPropagation();
+    setFullscreenIndex((prev) => (prev - 1 + gettingStartedImages.length) % gettingStartedImages.length);
+  };
+
+  const goToNext = (e) => {
+    e.stopPropagation();
+    setFullscreenIndex((prev) => (prev + 1) % gettingStartedImages.length);
+  };
+
+  // Keyboard navigation for fullscreen
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!fullscreenOpen) return;
+      if (e.key === 'Escape') closeFullscreen();
+      if (e.key === 'ArrowLeft') setFullscreenIndex((prev) => (prev - 1 + gettingStartedImages.length) % gettingStartedImages.length);
+      if (e.key === 'ArrowRight') setFullscreenIndex((prev) => (prev + 1) % gettingStartedImages.length);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [fullscreenOpen]);
 
   return (
     <div className="case-study blockchain-platform">
@@ -66,10 +130,17 @@ function BlockchainPlatform() {
         </div>
       </section>
 
-      {/* Full-width Platform Screenshot */}
+      {/* Full-width Platform Screenshot - Fade Carousel */}
       <section className="bc-platform-showcase">
-        <div className="bc-platform-image">
-          <img src="/images/Blockchain/Artboard Copy.png" alt="IBM Blockchain Platform interface showing Understand, Build, Operate, and Grow tabs with Ordering Services and Certificate Authorities" />
+        <div className="bc-fade-carousel">
+          {showcaseImages.map((image, index) => (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              className={`bc-fade-image ${index === currentImageIndex ? 'active' : ''}`}
+            />
+          ))}
         </div>
       </section>
 
@@ -90,51 +161,49 @@ function BlockchainPlatform() {
           </p>
         </div>
 
-        {/* Before/After Comparison */}
-        <div className="bc-comparison-grid">
-          <div className="bc-comparison-column">
-            <h4 className="bc-comparison-title script-font">Getting started/Buy app (before)</h4>
-            <div className="bc-comparison-images">
-              <img src="/images/Blockchain/1_create_select plan.png" alt="Original getting started - select plan screen" />
-              <img src="/images/Blockchain/2_create_choose cluster.png" alt="Original getting started - choose cluster screen" />
+        {/* 2x2 Work Grid with titles and descriptions */}
+        <div className="bc-work-grid">
+          <div className="bc-work-column">
+            <h4 className="bc-work-title script-font">Getting started/Buy exp (below)</h4>
+            <div className="bc-work-item">
+              <img src="/images/Blockchain/1_create_select plan.png" alt="Create select plan screen" />
             </div>
             <p className="cs-text">
-              Understand the current problems with the experience (NPS and research). Share more nuanced pain points and usability tests with stakeholders. Sketch, test, and define a new experience that addresses pain points and can feasibly be built.
+              Understand the current problems with the experience (NPS and research)
+              Work cross-team and with PM to push feasibility and component design
+              Iterate, test, and define a new experience that addresses pain points and can feasibly be built.
             </p>
           </div>
-          <div className="bc-comparison-column">
-            <h4 className="bc-comparison-title script-font">Get started resource model (After)</h4>
-            <div className="bc-comparison-images">
-              <img src="/images/Blockchain/4. wait time_cart.png" alt="New getting started - wait time with cart" />
-              <img src="/images/Blockchain/5_complete with cart.png" alt="New getting started - complete with cart" />
+          <div className="bc-work-column">
+            <h4 className="bc-work-title script-font">Get started resources modal (above)</h4>
+            <div className="bc-work-item">
+              <img src="/images/Blockchain/Hifi_2x (2)_edited.jpg" alt="High fidelity UI design" />
             </div>
             <p className="cs-text">
-              Organize and design resources to best meet the needs of a user at whatever stage of their experience they're in. Test and get feedback, take till home up to FI visuals with the Carbon design system.
+              Organize and design resources to best meet the needs of a user at whatever stage of the experience they are at.
+              Test and get feedback, take UX frames up to hi-fi visuals with the Carbon design system
             </p>
           </div>
         </div>
-      </section>
 
-      {/* UX Design Work Section */}
-      <section className="cs-section">
-        <h3 className="bc-section-subtitle script-font">UX Design work</h3>
-
-        <div className="bc-ux-grid">
-          <div className="bc-ux-column">
-            <div className="bc-ux-image">
-              <img src="/images/Blockchain/Hifi_2x.png" alt="UI Design work - high fidelity mockups" />
+        <div className="bc-work-grid">
+          <div className="bc-work-column">
+            <h4 className="bc-work-title script-font">UX Design work</h4>
+            <div className="bc-work-item">
+              <img src="/images/Blockchain/Update Channel - Channel capabilities_2x.png" alt="Update Channel capabilities" />
             </div>
             <p className="cs-text">
-              Take on multiple UX and Visual Design story issues. Discuss and communicate with the right people to design wireframes and/or hi-fis that address the user problem or new feature request.
+              Take on multiple UX and Visual design story issues.
+              Iterate and communicate with the right people to design wires and/or hi fis that address the user problem or new feature request
             </p>
           </div>
-          <div className="bc-ux-column">
-            <h4 className="bc-column-title script-font">Journey Maps</h4>
-            <div className="bc-ux-image">
-              <img src="/images/Blockchain/Hifi_2x (1).png" alt="Journey maps for blockchain platform user experience" />
+          <div className="bc-work-column">
+            <h4 className="bc-work-title script-font">Journey maps</h4>
+            <div className="bc-work-item">
+              <img src="/images/Blockchain/full minus detail.png" alt="Full platform view" />
             </div>
             <p className="cs-text">
-              Design a visual that displays the high-level experience of a Blockchain Platform user from discovery to extended use. These designs were repeatedly used on websites, important presentations and in model mapping to give an overarching view of the process. I created multiple iterations for more detailed parts of the process and other product(s) I later worked on.
+              Design a visual that displays the high level experience of a Blockchain Platform user from discovery to extended use. These designs were successfully used on websites, important presentations and in client meetings to get an overarching view of the process. I created multiple iterations for more detailed parts of the process and other products I later worked on
             </p>
           </div>
         </div>
@@ -142,33 +211,67 @@ function BlockchainPlatform() {
 
       {/* Getting Started App Grid */}
       <section className="cs-section">
-        <h3 className="bc-section-subtitle script-font">Getting started app (Buy app)</h3>
+        <h3 className="bc-section-subtitle script-font">Getting started exp (Buy exp)</h3>
 
         <div className="bc-app-grid">
-          <div className="bc-app-item">
-            <img src="/images/Blockchain/1_create_select plan.png" alt="Select plan screen" />
-          </div>
-          <div className="bc-app-item">
-            <img src="/images/Blockchain/2_create_choose cluster.png" alt="Choose cluster screen" />
-          </div>
-          <div className="bc-app-item">
-            <img src="/images/Blockchain/4. wait time_cart.png" alt="Wait time with cart screen" />
-          </div>
-          <div className="bc-app-item">
-            <img src="/images/Blockchain/4.1 wait time_no cart.png" alt="Wait time without cart screen" />
-          </div>
-          <div className="bc-app-item">
-            <img src="/images/Blockchain/5_complete with cart.png" alt="Complete with cart screen" />
-          </div>
-          <div className="bc-app-item">
-            <img src="/images/Blockchain/app switcher 2_2x.png" alt="App switcher design" />
-          </div>
+          {gettingStartedImages.map((image, index) => (
+            <div
+              key={index}
+              className="bc-app-grid-item"
+              onClick={() => openFullscreen(index)}
+            >
+              <img src={image.src} alt={image.alt} />
+            </div>
+          ))}
         </div>
 
         <p className="cs-text bc-app-description">
           Working cross-team and with PM, I designed an experience that allowed in-context kubernetes cluster creation- a previously huge barrier to entry for our users. On top of this we implemented multiple designs to enhance the buy experience. We cut the time to set up and connect kubernetes clusters (required for the platform) in half.
         </p>
       </section>
+
+      {/* Fullscreen overlay for Getting Started images */}
+      {fullscreenOpen && (
+        <div className="bc-fullscreen-overlay" onClick={closeFullscreen}>
+          <button className="bc-fullscreen-close" onClick={closeFullscreen} aria-label="Close fullscreen">
+            <span></span>
+            <span></span>
+          </button>
+
+          <button className="bc-fullscreen-nav bc-fullscreen-prev" onClick={goToPrev} aria-label="Previous image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <div className="bc-fullscreen-content" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={gettingStartedImages[fullscreenIndex].src}
+              alt={gettingStartedImages[fullscreenIndex].alt}
+            />
+          </div>
+
+          <button className="bc-fullscreen-nav bc-fullscreen-next" onClick={goToNext} aria-label="Next image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
+          <div className="bc-fullscreen-indicators">
+            {gettingStartedImages.map((_, index) => (
+              <button
+                key={index}
+                className={`bc-fullscreen-indicator ${index === fullscreenIndex ? 'active' : ''}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setFullscreenIndex(index);
+                }}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Reflection Section */}
       <section className="cs-section">
@@ -185,11 +288,7 @@ function BlockchainPlatform() {
         {/* Award Section */}
         <div className="bc-award-section">
           <div className="bc-award-badge">
-            <div className="bc-reddot-text">
-              <span className="bc-reddot-logo">red dot</span>
-              <span className="bc-reddot-label">design award</span>
-              <span className="bc-reddot-year">winner 2019</span>
-            </div>
+            <img src="/images/RedDot_Design_Award_edited.jpg" alt="Red Dot Design Award Winner 2019" />
           </div>
           <div className="bc-award-text">
             <p className="cs-text">

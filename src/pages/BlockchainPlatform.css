@@ -1,22 +1,32 @@
 /* Blockchain Platform - Case Study Styles */
 
-/* Platform Showcase - Full width dark section */
+/* Platform Showcase - Fade Carousel */
 .bc-platform-showcase {
-  background: #1a1a2e;
-  padding: 60px 80px;
+  padding: 10px 80px 20px;
   margin: 0;
 }
 
-.bc-platform-image {
-  max-width: 1200px;
+.bc-fade-carousel {
+  position: relative;
+  max-width: 1400px;
   margin: 0 auto;
+  aspect-ratio: 16 / 9;
 }
 
-.bc-platform-image img {
+.bc-fade-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
   border-radius: 4px;
+}
+
+.bc-fade-image.active {
+  opacity: 1;
 }
 
 /* Product Label */
@@ -29,6 +39,41 @@
 .bc-goal-text {
   font-style: italic;
   color: #555;
+}
+
+/* Work Grid - 2x2 with titles and descriptions */
+.bc-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.bc-work-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.bc-work-title {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.bc-work-item {
+  overflow: hidden;
+  border-radius: 4px;
+  height: 300px;
+  border: 1px solid var(--light-gray);
+  margin-bottom: 15px;
+}
+
+.bc-work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 /* Section Subtitle */
@@ -129,6 +174,151 @@
   margin-top: 20px;
 }
 
+/* Getting Started App Grid */
+.bc-app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  width: calc(100% + 200px);
+  margin-left: -100px;
+  margin-right: -100px;
+}
+
+.bc-app-grid-item {
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 340px;
+}
+
+.bc-app-grid-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bc-app-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* Fullscreen Overlay */
+.bc-fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bc-fullscreen-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bc-fullscreen-close span {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: white;
+  top: 50%;
+  left: 50%;
+}
+
+.bc-fullscreen-close span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.bc-fullscreen-close span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.bc-fullscreen-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 1001;
+}
+
+.bc-fullscreen-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bc-fullscreen-nav svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.bc-fullscreen-prev {
+  left: 20px;
+}
+
+.bc-fullscreen-next {
+  right: 20px;
+}
+
+.bc-fullscreen-content {
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.bc-fullscreen-content img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.bc-fullscreen-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.bc-fullscreen-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.bc-fullscreen-indicator.active {
+  background: white;
+}
+
 /* Award Section */
 .bc-award-section {
   display: flex;
@@ -143,44 +333,12 @@
 
 .bc-award-badge {
   flex-shrink: 0;
-  width: 140px;
+  width: 120px;
 }
 
 .bc-award-badge img {
   width: 100%;
   height: auto;
-}
-
-/* Red Dot Text Badge */
-.bc-reddot-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 15px;
-  background: #e30613;
-  border-radius: 4px;
-  color: white;
-}
-
-.bc-reddot-logo {
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: lowercase;
-  letter-spacing: 0.5px;
-}
-
-.bc-reddot-label {
-  font-size: 0.7rem;
-  text-transform: lowercase;
-  letter-spacing: 0.5px;
-  margin-top: 2px;
-}
-
-.bc-reddot-year {
-  font-size: 0.65rem;
-  text-transform: lowercase;
-  margin-top: 4px;
-  opacity: 0.9;
 }
 
 .bc-award-text {
@@ -196,30 +354,36 @@
   .bc-platform-showcase {
     padding: 50px;
   }
-
-  .bc-app-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
   .bc-platform-showcase {
-    padding: 40px 30px;
+    padding: 10px 30px 15px;
   }
 
-  .bc-comparison-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .bc-fade-carousel {
+    aspect-ratio: 4 / 3;
   }
 
-  .bc-ux-grid {
+  .bc-work-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
+  }
+
+  .bc-work-item {
+    height: 200px;
   }
 
   .bc-app-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  .bc-app-grid-item {
+    height: 200px;
   }
 
   .bc-award-section {

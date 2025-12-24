@@ -1,17 +1,37 @@
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
 function Navigation({ isOpen, onClose }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     onClose();
 
     if (targetId === 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      setTimeout(() => {
-        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      if (location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate('/');
+      }
+    } else if (targetId === 'work') {
+      if (location.pathname === '/') {
+        setTimeout(() => {
+          document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      } else {
+        navigate('/', { state: { scrollTo: 'work' } });
+      }
     }
+  };
+
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    onClose();
+    setTimeout(() => {
+      navigate('/about');
+    }, 300);
   };
 
   return (
@@ -23,7 +43,7 @@ function Navigation({ isOpen, onClose }) {
 
       <nav className="nav-menu">
         <a
-          href="#home"
+          href="/"
           className="nav-link script-font"
           onClick={(e) => handleNavClick(e, 'home')}
         >
@@ -37,9 +57,9 @@ function Navigation({ isOpen, onClose }) {
           Work
         </a>
         <a
-          href="#about"
+          href="/about"
           className="nav-link script-font"
-          onClick={(e) => handleNavClick(e, 'about')}
+          onClick={handleAboutClick}
         >
           About
         </a>

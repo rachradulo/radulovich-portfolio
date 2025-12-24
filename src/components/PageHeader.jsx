@@ -15,10 +15,11 @@ function PageHeader({ onMenuOpen }) {
         onClick={handleLogoClick}
         aria-label="Go to home"
       >
-        <span className="logo-text script-font">RR</span>
+        <span className="logo-text script-font">RO</span>
       </button>
 
       <button className="hamburger-button" onClick={onMenuOpen} aria-label="Open menu">
+        <span></span>
         <span></span>
         <span></span>
       </button>

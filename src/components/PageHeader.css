@@ -20,34 +20,25 @@
 
 .logo-text {
   font-size: 1.5rem;
-  color: var(--purple-primary);
+  color: #c9b8e8;
 }
 
 .hamburger-button {
   background: none;
   border: none;
-  width: 30px;
-  height: 20px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   cursor: pointer;
-  padding: 0;
+  padding: 10px;
 }
 
 .hamburger-button span {
-  position: absolute;
-  width: 100%;
+  display: block;
+  width: 28px;
   height: 2px;
   background-color: var(--purple-light);
-  left: 0;
-  transition: transform 0.3s ease;
-}
-
-.hamburger-button span:first-child {
-  top: 0;
-}
-
-.hamburger-button span:last-child {
-  bottom: 0;
+  transition: all 0.3s ease;
 }
 
 .hamburger-button:hover span {

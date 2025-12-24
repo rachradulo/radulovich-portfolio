@@ -21,7 +21,7 @@ function Hero({ onMenuOpen }) {
 
         <p className="hero-description">
           is currently a co-founder & design leader<br />
-          @ <a href="https://rownd.com" target="_blank" rel="noopener noreferrer" className="rownd-link">Rownd</a> in Raleigh, North Carolina.
+          @ <a href="https://llamafarm.dev/" target="_blank" rel="noopener noreferrer" className="rownd-link">LlamaFarm</a> in Raleigh, North Carolina.
         </p>
 
         <button className="my-work-button" onClick={scrollToWork}>

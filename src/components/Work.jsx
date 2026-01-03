@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Work.css';
 
 const projects = [
@@ -34,7 +35,7 @@ function Work() {
 
       <div className="projects-grid">
         {projects.map((project) => (
-          <a key={project.id} href={project.link} className="project-card">
+          <Link key={project.id} to={project.link} className="project-card">
             <div className="project-image-container">
               <div
                 className="project-image"
@@ -44,7 +45,7 @@ function Work() {
                 <h3 className="project-title script-font">{project.title}</h3>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

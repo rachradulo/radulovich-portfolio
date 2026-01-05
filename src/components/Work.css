@@ -68,6 +68,25 @@
   font-weight: 300;
 }
 
+/* Featured Project - spans both columns, same height as regular cards */
+.project-card-featured {
+  grid-column: 1 / -1;
+  aspect-ratio: 32 / 9;
+}
+
+.project-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-subtitle {
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 300;
+  opacity: 0.9;
+}
+
 @media (max-width: 900px) {
   .work-section {
     padding: 40px 20px;

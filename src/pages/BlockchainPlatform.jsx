@@ -301,7 +301,7 @@ function BlockchainPlatform() {
       {/* Project Navigation */}
       <ProjectNavigation
         prevProject={{ name: 'IBM Trusted Identity', path: '/work/trusted-identity' }}
-        nextProject={{ name: 'IBM Watson Orchestrate', path: '/work/watson-orchestrate' }}
+        nextProject={{ name: 'Rownd', path: '/work/rownd' }}
       />
 
       <CaseStudyFooter />

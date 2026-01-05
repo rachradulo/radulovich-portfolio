@@ -243,7 +243,7 @@ function WatsonOrchestrate() {
 
       {/* Project Navigation */}
       <ProjectNavigation
-        prevProject={{ name: 'IBM Blockchain Platform', path: '/work/blockchain-platform' }}
+        prevProject={{ name: 'Rownd', path: '/work/rownd' }}
         nextProject={{ name: 'IBM Transformation Advisor', path: '/work/transformation-advisor' }}
       />
 

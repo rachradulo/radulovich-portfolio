@@ -46,7 +46,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0) 75%
+  );
   display: flex;
   align-items: flex-end;
   padding: 20px;
@@ -95,6 +100,18 @@
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+  /* Featured Rownd card: make it the tallest/hero card on mobile
+     instead of a thin 32/9 sliver */
+  .project-card-featured {
+    aspect-ratio: 3 / 2;
+  }
+
+  /* Touch devices have no hover — keep titles always visible
+     (reuses the purple gradient from the base overlay) */
+  .project-overlay {
+    opacity: 1;
   }
 
   .work-title {

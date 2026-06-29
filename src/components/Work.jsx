@@ -3,9 +3,9 @@ import './Work.css';
 
 const featuredProject = {
   id: 0,
-  title: 'Rownd',
+  title: 'Rownd authentication',
   subtitle: 'Designing and Scaling Authentication',
-  image: '/images/rownd/rownd-hero.png',
+  image: '/images/rownd/homepage-rownd.png',
   link: '/work/rownd',
 };
 

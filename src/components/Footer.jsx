@@ -25,7 +25,7 @@ function Footer() {
         </svg>
       </button>
 
-      <p className="copyright">&copy; 2025 Rachel Orrino — Designed and developed by me using GitHub, Claude Code, and Netlify.</p>
+      <p className="copyright">&copy; 2026 Rachel Orrino — Designed and developed by me using GitHub, Claude Code, and Netlify.</p>
     </footer>
   );
 }

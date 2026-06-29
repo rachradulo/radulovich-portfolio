@@ -1,0 +1,113 @@
+/* Rownd case study — page-specific styles */
+
+/* Full-width images: tighten gap above, small caption below */
+.rownd .rownd-mobile-image,
+.rownd .rownd-tight-image {
+  padding-top: 0;
+  margin-top: -18px;
+}
+
+.rownd .rownd-image-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin: 10px 0 0;
+}
+
+/* Broader Platform slider: keep full image proportions, ~3 across */
+.rownd .wo-outcome-slider .slide {
+  width: calc((100vw - 60px) / 2.6);
+  max-width: 560px;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+.rownd .wo-outcome-slider .slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .rownd .wo-outcome-slider .slide {
+    width: calc(100vw - 120px);
+  }
+}
+
+/* Hero video: content width, natural proportions */
+.rownd .cs-hero-video {
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.rownd .cs-hero-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+.rownd .rownd-hero-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin: 10px 0 0;
+}
+
+/* Speaking & events photo gallery (mirrors the Trusted Identity gallery) */
+.rownd-photo-gallery {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 40px 80px 12px;
+}
+
+.rownd-gallery-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  padding: 0 80px 40px;
+  margin: 0;
+}
+
+.rownd-photo-gallery img {
+  flex: 1;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .rownd-gallery-caption {
+    padding: 0 50px 30px;
+  }
+
+  .rownd-photo-gallery {
+    padding: 30px 50px 12px;
+  }
+
+  .rownd-photo-gallery img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rownd-gallery-caption {
+    padding: 0 30px 30px;
+  }
+
+  .rownd-photo-gallery {
+    flex-wrap: wrap;
+    padding: 30px 30px 12px;
+    gap: 8px;
+  }
+
+  .rownd-photo-gallery img {
+    flex: 1 1 calc(50% - 8px);
+    min-width: calc(50% - 8px);
+    height: 120px;
+  }
+}

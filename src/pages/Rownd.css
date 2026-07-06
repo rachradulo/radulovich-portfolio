@@ -57,12 +57,15 @@
   margin: 10px 0 0;
 }
 
-/* Speaking & events photo gallery (mirrors the Trusted Identity gallery) */
+/* Speaking & events photo gallery — CSS grid so tiles shrink evenly
+   and stay centered at every width (flex min-width:auto caused overflow) */
 .rownd-photo-gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
   width: 100%;
   padding: 40px 80px 12px;
+  box-sizing: border-box;
 }
 
 .rownd-gallery-caption {
@@ -74,40 +77,42 @@
 }
 
 .rownd-photo-gallery img {
-  flex: 1;
+  width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 4px;
+  display: block;
 }
 
+/* Tablet: wrap to 3 across */
 @media (max-width: 1024px) {
   .rownd-gallery-caption {
     padding: 0 50px 30px;
   }
 
   .rownd-photo-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     padding: 30px 50px 12px;
   }
 
   .rownd-photo-gallery img {
-    height: 150px;
+    height: 160px;
   }
 }
 
-@media (max-width: 768px) {
+/* Phone: wrap to 2 across */
+@media (max-width: 600px) {
   .rownd-gallery-caption {
     padding: 0 30px 30px;
   }
 
   .rownd-photo-gallery {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 30px 30px 12px;
     gap: 8px;
   }
 
   .rownd-photo-gallery img {
-    flex: 1 1 calc(50% - 8px);
-    min-width: calc(50% - 8px);
-    height: 120px;
+    height: 130px;
   }
 }

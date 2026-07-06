@@ -11,18 +11,18 @@ const featuredProject = {
 
 const projects = [
   {
+    id: 5,
+    title: 'LlamaFarm',
+    subtitle: '2025–2026',
+    image: '/images/llamafarm/media/LF-portfolio-header.png',
+    link: '/work/llamafarm',
+  },
+  {
     id: 1,
     title: 'IBM Watson Orchestrate',
     subtitle: '2021',
     image: '/images/Watson-Orchestrate-Explainer-5E-Desktop.webp',
     link: '/work/watson-orchestrate',
-  },
-  {
-    id: 2,
-    title: 'IBM Transformation Advisor',
-    subtitle: '2020–2021',
-    image: '/images/transformation-advisor.jpg',
-    link: '/work/transformation-advisor',
   },
   {
     id: 3,
@@ -39,6 +39,9 @@ const projects = [
     link: '/work/blockchain-platform',
   },
 ];
+
+// Unlisted (reachable by direct URL, hidden from the grid):
+//   /work/transformation-advisor
 
 function Work() {
   return (

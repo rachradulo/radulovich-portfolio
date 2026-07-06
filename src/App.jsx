@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Work from './components/Work';
 import Footer from './components/Footer';
 import Rownd from './pages/Rownd';
+import LlamaFarm from './pages/LlamaFarm';
 import WatsonOrchestrate from './pages/WatsonOrchestrate';
 import BlockchainPlatform from './pages/BlockchainPlatform';
 import TransformationAdvisor from './pages/TransformationAdvisor';
@@ -45,6 +46,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/work/rownd" element={<Rownd />} />
+        <Route path="/work/llamafarm" element={<LlamaFarm />} />
         <Route path="/work/watson-orchestrate" element={<WatsonOrchestrate />} />
         <Route path="/work/blockchain-platform" element={<BlockchainPlatform />} />
         <Route path="/work/transformation-advisor" element={<TransformationAdvisor />} />

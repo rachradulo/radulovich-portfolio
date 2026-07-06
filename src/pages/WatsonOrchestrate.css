@@ -161,6 +161,18 @@
   margin-bottom: 20px;
 }
 
+/* Inline links inside case-study body text (readable on light background) */
+.cs-inline-link {
+  color: var(--purple-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.cs-inline-link:hover {
+  opacity: 0.7;
+}
+
 .cs-list {
   list-style: disc;
   padding-left: 25px;
